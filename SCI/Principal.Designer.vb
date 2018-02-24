@@ -38,54 +38,56 @@ Partial Class Principal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InevntariosToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.VentasToolStripMenuItem, Me.ResportesToolStripMenuItem, Me.UtileríasToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(661, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(881, 28)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'InevntariosToolStripMenuItem
         '
         Me.InevntariosToolStripMenuItem.Name = "InevntariosToolStripMenuItem"
-        Me.InevntariosToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
+        Me.InevntariosToolStripMenuItem.Size = New System.Drawing.Size(87, 24)
         Me.InevntariosToolStripMenuItem.Text = "Inventario"
         '
         'ComprasToolStripMenuItem
         '
         Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
-        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(80, 24)
         Me.ComprasToolStripMenuItem.Text = "Compras"
         '
         'VentasToolStripMenuItem
         '
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(64, 24)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'ResportesToolStripMenuItem
         '
         Me.ResportesToolStripMenuItem.Name = "ResportesToolStripMenuItem"
-        Me.ResportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ResportesToolStripMenuItem.Size = New System.Drawing.Size(80, 24)
         Me.ResportesToolStripMenuItem.Text = "Reportes"
         '
         'UtileríasToolStripMenuItem
         '
         Me.UtileríasToolStripMenuItem.Name = "UtileríasToolStripMenuItem"
-        Me.UtileríasToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.UtileríasToolStripMenuItem.Size = New System.Drawing.Size(75, 24)
         Me.UtileríasToolStripMenuItem.Text = "Utilerías"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(50, 24)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'Principal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(661, 459)
+        Me.ClientSize = New System.Drawing.Size(881, 565)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Principal"
         Me.Text = "Sistema de Control de Inventarios"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

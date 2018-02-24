@@ -46,6 +46,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -70,10 +71,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Articulo.Designer.vb">
-      <DependentUpon>Articulo.vb</DependentUpon>
+    <Compile Include="Compra.Designer.vb">
+      <DependentUpon>Compra.vb</DependentUpon>
     </Compile>
-    <Compile Include="Articulo.vb">
+    <Compile Include="Compra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras.Designer.vb">
+      <DependentUpon>Compras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto.Designer.vb">
+      <DependentUpon>Producto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InicioSesion.vb">
@@ -89,6 +102,7 @@
     <Compile Include="Inventario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -112,8 +126,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Articulo.resx">
-      <DependentUpon>Articulo.vb</DependentUpon>
+    <EmbeddedResource Include="Compra.resx">
+      <DependentUpon>Compra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras.resx">
+      <DependentUpon>Compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto.resx">
+      <DependentUpon>Producto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.vb</DependentUpon>
