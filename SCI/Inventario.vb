@@ -9,13 +9,7 @@ Public Class Inventario
     End Sub
 
     Sub actualizaGrid(Optional orden As String = "clave asc")
-        Dim conexion As New MySqlConnection(cadenaConexion)
-        Dim adaptador As New MySqlDataAdapter("select clave, nombre, existencia, precio from inventario order by " & orden, conexion)
-        Dim tabla As New DataTable
-        adaptador.Fill(tabla)
-        DataGridView1.DataSource = tabla
-        DataGridView1.Refresh()
-
+        Module1.llenarGrid("select clave, nombre, existencia, precio from inventario order by " & orden, DataGridView1)
     End Sub
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
@@ -31,7 +25,7 @@ Public Class Inventario
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
         If DataGridView1.SelectedRows.Count > 0 Then
             If MsgBox("Esta seguro de eliminar", MsgBoxStyle.YesNo) = vbYes Then
-                Dim conexion As New MySqlConnection(cadenaConexion)
+                Dim conexion As New MySqlConnection(servidor)
                 Dim comando As New MySqlCommand
                 conexion.Open()
                 comando.Connection = conexion

@@ -4,7 +4,7 @@ Public Class Producto
     Dim modificar As Boolean = False
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim con As New MySqlConnection(cadenaConexion)
+        Dim con As New MySqlConnection(servidor)
         Dim com As New MySqlCommand
         con.Open()
         com.Connection = con
@@ -34,7 +34,7 @@ Public Class Producto
     End Sub
 
     Sub modifica(clave As String)
-        Dim con As New MySqlConnection(cadenaConexion)
+        Dim con As New MySqlConnection(servidor)
         Dim com As New MySqlCommand
         Dim dr As MySqlDataReader
 

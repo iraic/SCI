@@ -2,8 +2,21 @@
 Imports MySql.Data.MySqlClient
 Module Module1
 
-    Public cadenaConexion As String = "DATABASE=sci;DATASOURCE=localhost;USERID=root;PWD="
+    Public servidor As String = "DATABASE=sci;DATASOURCE=localhost;USERID=root;PWD="
     Public sesUser As String
+
+    Public Sub llenarGrid(sql As String, dg As DataGridView)
+        Try
+            Dim con As New MySqlConnection(servidor)
+            Dim ada As New MySqlDataAdapter(sql, con)
+            Dim dt As New DataTable
+            dt.Clear()
+            ada.Fill(dt)
+            dg.DataSource = dt
+            dg.Refresh()
+        Catch
+        End Try
+    End Sub
 
     Public Function Letras(numero As Double) As String
         Dim cantidad As String = Format(numero, "0.00")

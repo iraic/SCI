@@ -22,85 +22,43 @@ Partial Class Compra
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.txtFecha = New System.Windows.Forms.TextBox()
+        Me.txtCompra = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblCantidad = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtArticulo = New System.Windows.Forms.TextBox()
+        Me.txtSubtotal = New System.Windows.Forms.TextBox()
+        Me.btnMenos = New System.Windows.Forms.Button()
+        Me.btnMas = New System.Windows.Forms.Button()
+        Me.txtPrecio = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Clave = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(21, 24)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(42, 17)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Folio:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(203, 24)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 17)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Fecha:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(69, 21)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox1.TabIndex = 3
-        '
-        'dtpFecha
-        '
-        Me.dtpFecha.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
-        Me.dtpFecha.CustomFormat = "dd/MMM/yyyy"
-        Me.dtpFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
-        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(261, 21)
-        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(4)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(137, 22)
-        Me.dtpFecha.TabIndex = 61
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 58)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(916, 485)
-        Me.DataGridView1.TabIndex = 62
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(827, 550)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 28)
-        Me.Button2.TabIndex = 64
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(719, 550)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 28)
-        Me.Button1.TabIndex = 63
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -111,32 +69,393 @@ Partial Class Compra
         Me.Label3.TabIndex = 65
         Me.Label3.Text = "-"
         '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(561, 390)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(107, 54)
+        Me.btnEliminar.TabIndex = 71
+        Me.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Location = New System.Drawing.Point(675, 390)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(107, 54)
+        Me.btnAgregar.TabIndex = 72
+        Me.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAgregar.UseVisualStyleBackColor = True
+        '
+        'txtFecha
+        '
+        Me.txtFecha.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.txtFecha.Location = New System.Drawing.Point(330, 12)
+        Me.txtFecha.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtFecha.Name = "txtFecha"
+        Me.txtFecha.ReadOnly = True
+        Me.txtFecha.Size = New System.Drawing.Size(243, 22)
+        Me.txtFecha.TabIndex = 68
+        Me.txtFecha.TabStop = False
+        '
+        'txtCompra
+        '
+        Me.txtCompra.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.txtCompra.Location = New System.Drawing.Point(85, 12)
+        Me.txtCompra.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCompra.Name = "txtCompra"
+        Me.txtCompra.ReadOnly = True
+        Me.txtCompra.Size = New System.Drawing.Size(75, 22)
+        Me.txtCompra.TabIndex = 66
+        Me.txtCompra.TabStop = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Panel2.Controls.Add(Me.txtTotal)
+        Me.Panel2.Controls.Add(Me.Label10)
+        Me.Panel2.Location = New System.Drawing.Point(13, 353)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(176, 94)
+        Me.Panel2.TabIndex = 73
+        '
+        'txtTotal
+        '
+        Me.txtTotal.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.txtTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotal.Location = New System.Drawing.Point(21, 47)
+        Me.txtTotal.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.ReadOnly = True
+        Me.txtTotal.Size = New System.Drawing.Size(103, 30)
+        Me.txtTotal.TabIndex = 13
+        Me.txtTotal.TabStop = False
+        Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(16, 18)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(68, 25)
+        Me.Label10.TabIndex = 16
+        Me.Label10.Text = "Total:"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Panel1.Controls.Add(Me.lblCantidad)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.txtCodigo)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.txtArticulo)
+        Me.Panel1.Controls.Add(Me.txtSubtotal)
+        Me.Panel1.Controls.Add(Me.btnMenos)
+        Me.Panel1.Controls.Add(Me.btnMas)
+        Me.Panel1.Controls.Add(Me.txtPrecio)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.txtCantidad)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.txtNombre)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Location = New System.Drawing.Point(13, 44)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(769, 110)
+        Me.Panel1.TabIndex = 69
+        '
+        'lblCantidad
+        '
+        Me.lblCantidad.AutoSize = True
+        Me.lblCantidad.Location = New System.Drawing.Point(583, 18)
+        Me.lblCantidad.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCantidad.Name = "lblCantidad"
+        Me.lblCantidad.Size = New System.Drawing.Size(51, 17)
+        Me.lblCantidad.TabIndex = 118
+        Me.lblCantidad.Text = "Label8"
+        Me.lblCantidad.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(491, 7)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(31, 28)
+        Me.Button2.TabIndex = 5
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(209, 14)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(101, 17)
+        Me.Label1.TabIndex = 116
+        Me.Label1.Text = "Código barras:"
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.Location = New System.Drawing.Point(321, 10)
+        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodigo.MaxLength = 16
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(160, 22)
+        Me.txtCodigo.TabIndex = 4
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(17, 14)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(47, 17)
+        Me.Label7.TabIndex = 115
+        Me.Label7.Text = "Clave:"
+        '
+        'txtArticulo
+        '
+        Me.txtArticulo.BackColor = System.Drawing.SystemColors.Window
+        Me.txtArticulo.Location = New System.Drawing.Point(76, 10)
+        Me.txtArticulo.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtArticulo.MaxLength = 16
+        Me.txtArticulo.Name = "txtArticulo"
+        Me.txtArticulo.Size = New System.Drawing.Size(99, 22)
+        Me.txtArticulo.TabIndex = 16
+        '
+        'txtSubtotal
+        '
+        Me.txtSubtotal.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.txtSubtotal.Location = New System.Drawing.Point(403, 74)
+        Me.txtSubtotal.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSubtotal.Name = "txtSubtotal"
+        Me.txtSubtotal.ReadOnly = True
+        Me.txtSubtotal.Size = New System.Drawing.Size(79, 22)
+        Me.txtSubtotal.TabIndex = 9
+        Me.txtSubtotal.TabStop = False
+        Me.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'btnMenos
+        '
+        Me.btnMenos.Location = New System.Drawing.Point(557, 44)
+        Me.btnMenos.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnMenos.Name = "btnMenos"
+        Me.btnMenos.Size = New System.Drawing.Size(59, 54)
+        Me.btnMenos.TabIndex = 11
+        Me.btnMenos.UseVisualStyleBackColor = True
+        '
+        'btnMas
+        '
+        Me.btnMas.Location = New System.Drawing.Point(491, 44)
+        Me.btnMas.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnMas.Name = "btnMas"
+        Me.btnMas.Size = New System.Drawing.Size(59, 54)
+        Me.btnMas.TabIndex = 10
+        Me.btnMas.UseVisualStyleBackColor = True
+        '
+        'txtPrecio
+        '
+        Me.txtPrecio.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.txtPrecio.Location = New System.Drawing.Point(76, 74)
+        Me.txtPrecio.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.ReadOnly = True
+        Me.txtPrecio.Size = New System.Drawing.Size(71, 22)
+        Me.txtPrecio.TabIndex = 7
+        Me.txtPrecio.TabStop = False
+        Me.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(329, 80)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(64, 17)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Subtotal:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(8, 78)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(52, 17)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Precio:"
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.Location = New System.Drawing.Point(243, 74)
+        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(65, 22)
+        Me.txtCantidad.TabIndex = 8
+        Me.txtCantidad.Text = "1"
+        Me.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(4, 47)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(62, 17)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Nombre:"
+        '
+        'txtNombre
+        '
+        Me.txtNombre.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.txtNombre.Location = New System.Drawing.Point(76, 42)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.ReadOnly = True
+        Me.txtNombre.Size = New System.Drawing.Size(405, 22)
+        Me.txtNombre.TabIndex = 6
+        Me.txtNombre.TabStop = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(165, 78)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(68, 17)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Cantidad:"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Clave, Me.Codigo, Me.Nombre, Me.Precio, Me.Cantidad, Me.Subtotal})
+        Me.DataGridView1.Location = New System.Drawing.Point(13, 161)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(769, 185)
+        Me.DataGridView1.TabIndex = 70
+        '
+        'Clave
+        '
+        Me.Clave.HeaderText = "Clave"
+        Me.Clave.Name = "Clave"
+        Me.Clave.ReadOnly = True
+        Me.Clave.Width = 50
+        '
+        'Codigo
+        '
+        Me.Codigo.HeaderText = "Código de barras"
+        Me.Codigo.Name = "Codigo"
+        Me.Codigo.ReadOnly = True
+        Me.Codigo.Width = 150
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        Me.Nombre.Width = 200
+        '
+        'Precio
+        '
+        Me.Precio.HeaderText = "Precio"
+        Me.Precio.Name = "Precio"
+        Me.Precio.ReadOnly = True
+        Me.Precio.Width = 50
+        '
+        'Cantidad
+        '
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.ReadOnly = True
+        Me.Cantidad.Width = 50
+        '
+        'Subtotal
+        '
+        Me.Subtotal.HeaderText = "Subtotal"
+        Me.Subtotal.Name = "Subtotal"
+        Me.Subtotal.ReadOnly = True
+        Me.Subtotal.Width = 50
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(269, 15)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(51, 17)
+        Me.Label2.TabIndex = 67
+        Me.Label2.Text = "Fecha:"
+        '
         'Compra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(940, 593)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(799, 464)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnAgregar)
+        Me.Controls.Add(Me.txtFecha)
+        Me.Controls.Add(Me.txtCompra)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.dtpFecha)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label3)
         Me.Name = "Compra"
         Me.Text = "Compras"
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents dtpFecha As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents btnEliminar As System.Windows.Forms.Button
+    Friend WithEvents btnAgregar As System.Windows.Forms.Button
+    Friend WithEvents txtFecha As System.Windows.Forms.TextBox
+    Friend WithEvents txtCompra As System.Windows.Forms.TextBox
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents txtTotal As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents lblCantidad As System.Windows.Forms.Label
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents txtCodigo As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents txtArticulo As System.Windows.Forms.TextBox
+    Friend WithEvents txtSubtotal As System.Windows.Forms.TextBox
+    Friend WithEvents btnMenos As System.Windows.Forms.Button
+    Friend WithEvents btnMas As System.Windows.Forms.Button
+    Friend WithEvents txtPrecio As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txtCantidad As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents txtNombre As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents Clave As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Codigo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Precio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Subtotal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

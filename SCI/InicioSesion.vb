@@ -7,7 +7,7 @@ Public Class InicioSesion
     End Sub
 
     Private Sub BtnEntrar_Click(sender As Object, e As EventArgs) Handles BtnEntrar.Click
-        Dim conUser As New MySqlConnection(cadenaConexion)
+        Dim conUser As New MySqlConnection(servidor)
         Dim comUser As New MySqlCommand
         Dim idrUser As MySqlDataReader
 
@@ -33,7 +33,7 @@ Public Class InicioSesion
     End Sub
 
     Private Sub InicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim conUser As New MySqlConnection(cadenaConexion)
+        Dim conUser As New MySqlConnection(servidor)
         Dim comUser As New MySqlCommand
         Dim idrUser As MySqlDataReader
 
