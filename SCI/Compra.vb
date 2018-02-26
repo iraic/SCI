@@ -9,16 +9,16 @@ Public Class Compra
         txtCompra.Text = G.secuencia("compras", "idCompra")
     End Sub
 
-    Private Sub txtArticulo_TextChanged(sender As Object, e As EventArgs) Handles txtArticulo.TextChanged
+    Private Sub txtArticulo_TextChanged(sender As Object, e As EventArgs)
         seleccionar()
 
     End Sub
 
-    Private Sub btnMas_Click(sender As Object, e As EventArgs) Handles btnMas.Click
+    Private Sub btnMas_Click(sender As Object, e As EventArgs)
         agregar()
     End Sub
 
-    Private Sub btnMenos_Click(sender As Object, e As EventArgs) Handles btnMenos.Click
+    Private Sub btnMenos_Click(sender As Object, e As EventArgs)
         If DataGridView1.SelectedRows.Count > 0 Then
             total = total - Val(DataGridView1.SelectedRows(0).Cells("Subtotal").Value)
             DataGridView1.Rows.Remove(DataGridView1.SelectedRows(0))
@@ -26,13 +26,13 @@ Public Class Compra
         End If
     End Sub
 
-    Private Sub txtCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress
+    Private Sub txtCantidad_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not IsNumeric(e.KeyChar) And e.KeyChar <> Chr(8) And e.KeyChar <> "." Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub txtCodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigo.KeyPress
+    Private Sub txtCodigo_KeyPress(sender As Object, e As KeyPressEventArgs)
         If e.KeyChar = Chr(13) Then
 
             txtArticulo.Text = G.leerCadena("articulos", "idArticulo", "Codigo='" & txtCodigo.Text & "'")
@@ -44,15 +44,15 @@ Public Class Compra
         End If
     End Sub
 
-    Private Sub txtCodigo_LostFocus(sender As Object, e As EventArgs) Handles txtCodigo.LostFocus
+    Private Sub txtCodigo_LostFocus(sender As Object, e As EventArgs)
         txtArticulo.Text = G.leerCadena("articulos", "idArticulo", "Codigo='" & txtCodigo.Text & "'")
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs)
         Dim op As String = ""
         Dim ops() As String
 
@@ -136,7 +136,7 @@ Public Class Compra
     End Sub
 
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         SeleccionaArticulo.ShowDialog()
         If SeleccionaArticulo.idArticulo <> "" Then
             txtArticulo.Text = SeleccionaArticulo.idArticulo

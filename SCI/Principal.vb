@@ -10,11 +10,11 @@
     End Sub
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Text = "Sistema de Control de Inventarios: " & sesUser & " - " & Now.ToShortDateString
+        Me.Text = "Sistema de Control de Inventarios: " & user & " - " & Now.ToShortDateString
     End Sub
 
     Private Sub ComprasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComprasToolStripMenuItem.Click
-        Compra.MdiParent = Me
-        Compra.Show()
+        Compras.MdiParent = Me
+        Compras.Show()
     End Sub
 End Class

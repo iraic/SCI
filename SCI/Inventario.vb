@@ -9,7 +9,7 @@ Public Class Inventario
     End Sub
 
     Sub actualizaGrid(Optional orden As String = "clave asc")
-        Module1.llenarGrid("select clave, nombre, existencia, precio from inventario order by " & orden, DataGridView1)
+        G.llenarGrid("select clave, nombre, existencia, precio from inventario order by " & orden, DataGridView1)
     End Sub
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click

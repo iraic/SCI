@@ -17,7 +17,7 @@ Public Class InicioSesion
         idrUser = comUser.ExecuteReader
         If idrUser.Read Then
             If idrUser.Item(1).ToString = TxtPass.Text Then
-                sesUser = idrUser.Item(0).ToString
+                user = idrUser.Item(0).ToString
                 conUser.Close()
                 Principal.Show()
                 Me.Close()
@@ -33,6 +33,12 @@ Public Class InicioSesion
     End Sub
 
     Private Sub InicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory() & "\conexion.txt") Then
+            Dim f As New IO.StreamReader(System.AppDomain.CurrentDomain.BaseDirectory() & "\conexion.txt")
+            G.servidor = "Server=" & f.ReadLine & ";Database=sci;Uid=root;Password="
+            f.Close()
+        End If
+
         Dim conUser As New MySqlConnection(servidor)
         Dim comUser As New MySqlCommand
         Dim idrUser As MySqlDataReader

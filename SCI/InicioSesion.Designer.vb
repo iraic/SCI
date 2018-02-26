@@ -22,7 +22,6 @@ Partial Class InicioSesion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InicioSesion))
         Me.TxtPass = New System.Windows.Forms.TextBox()
         Me.LblPass = New System.Windows.Forms.Label()
         Me.LblUser = New System.Windows.Forms.Label()
@@ -35,18 +34,21 @@ Partial Class InicioSesion
         '
         'TxtPass
         '
-        Me.TxtPass.Location = New System.Drawing.Point(171, 135)
+        Me.TxtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.TxtPass.Location = New System.Drawing.Point(171, 195)
+        Me.TxtPass.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxtPass.Name = "TxtPass"
         Me.TxtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(43)
-        Me.TxtPass.Size = New System.Drawing.Size(156, 20)
+        Me.TxtPass.Size = New System.Drawing.Size(150, 34)
         Me.TxtPass.TabIndex = 10
         '
         'LblPass
         '
         Me.LblPass.AutoSize = True
-        Me.LblPass.Location = New System.Drawing.Point(171, 119)
+        Me.LblPass.Location = New System.Drawing.Point(171, 174)
+        Me.LblPass.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblPass.Name = "LblPass"
-        Me.LblPass.Size = New System.Drawing.Size(64, 13)
+        Me.LblPass.Size = New System.Drawing.Size(85, 17)
         Me.LblPass.TabIndex = 9
         Me.LblPass.Text = "&Contraseña:"
         Me.LblPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -54,58 +56,65 @@ Partial Class InicioSesion
         'LblUser
         '
         Me.LblUser.AutoSize = True
-        Me.LblUser.Location = New System.Drawing.Point(171, 6)
+        Me.LblUser.Location = New System.Drawing.Point(171, 13)
+        Me.LblUser.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblUser.Name = "LblUser"
-        Me.LblUser.Size = New System.Drawing.Size(99, 13)
+        Me.LblUser.Size = New System.Drawing.Size(133, 17)
         Me.LblUser.TabIndex = 6
         Me.LblUser.Text = "&Nombre de usuario:"
         Me.LblUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'LogoPictureBox
         '
-        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
-        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+        Me.LogoPictureBox.Image = Global.SCI.My.Resources.Resources.Foto
+        Me.LogoPictureBox.Location = New System.Drawing.Point(13, 13)
+        Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(165, 193)
-        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.LogoPictureBox.Size = New System.Drawing.Size(150, 216)
+        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.LogoPictureBox.TabIndex = 7
         Me.LogoPictureBox.TabStop = False
         '
         'ListBox1
         '
+        Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 29
         Me.ListBox1.Items.AddRange(New Object() {"admin", "user"})
-        Me.ListBox1.Location = New System.Drawing.Point(171, 22)
+        Me.ListBox1.Location = New System.Drawing.Point(171, 33)
+        Me.ListBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(156, 82)
+        Me.ListBox1.Size = New System.Drawing.Size(150, 120)
         Me.ListBox1.TabIndex = 13
         '
         'BtnEntrar
         '
-        Me.BtnEntrar.Location = New System.Drawing.Point(171, 161)
+        Me.BtnEntrar.Image = Global.SCI.My.Resources.Resources.Ok
+        Me.BtnEntrar.Location = New System.Drawing.Point(13, 237)
+        Me.BtnEntrar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnEntrar.Name = "BtnEntrar"
-        Me.BtnEntrar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnEntrar.Size = New System.Drawing.Size(150, 54)
         Me.BtnEntrar.TabIndex = 14
-        Me.BtnEntrar.Text = "Entrar"
         Me.BtnEntrar.UseVisualStyleBackColor = True
         '
         'BtnSalir
         '
         Me.BtnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.BtnSalir.Location = New System.Drawing.Point(252, 161)
+        Me.BtnSalir.Image = Global.SCI.My.Resources.Resources.Cancel
+        Me.BtnSalir.Location = New System.Drawing.Point(171, 237)
+        Me.BtnSalir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnSalir.Name = "BtnSalir"
-        Me.BtnSalir.Size = New System.Drawing.Size(75, 23)
+        Me.BtnSalir.Size = New System.Drawing.Size(150, 54)
         Me.BtnSalir.TabIndex = 15
-        Me.BtnSalir.Text = "Salir"
         Me.BtnSalir.UseVisualStyleBackColor = True
         '
         'InicioSesion
         '
         Me.AcceptButton = Me.BtnEntrar
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.BtnSalir
-        Me.ClientSize = New System.Drawing.Size(339, 193)
+        Me.ClientSize = New System.Drawing.Size(338, 306)
         Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.BtnEntrar)
         Me.Controls.Add(Me.ListBox1)
@@ -114,7 +123,7 @@ Partial Class InicioSesion
         Me.Controls.Add(Me.LblUser)
         Me.Controls.Add(Me.LogoPictureBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "InicioSesion"

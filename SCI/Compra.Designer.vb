@@ -71,7 +71,7 @@ Partial Class Compra
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(561, 390)
+        Me.btnEliminar.Location = New System.Drawing.Point(561, 391)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(107, 54)
@@ -81,7 +81,7 @@ Partial Class Compra
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(675, 390)
+        Me.btnAgregar.Location = New System.Drawing.Point(675, 391)
         Me.btnAgregar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(107, 54)
@@ -92,7 +92,7 @@ Partial Class Compra
         'txtFecha
         '
         Me.txtFecha.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.txtFecha.Location = New System.Drawing.Point(330, 12)
+        Me.txtFecha.Location = New System.Drawing.Point(330, 13)
         Me.txtFecha.Margin = New System.Windows.Forms.Padding(4)
         Me.txtFecha.Name = "txtFecha"
         Me.txtFecha.ReadOnly = True
@@ -103,7 +103,7 @@ Partial Class Compra
         'txtCompra
         '
         Me.txtCompra.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.txtCompra.Location = New System.Drawing.Point(85, 12)
+        Me.txtCompra.Location = New System.Drawing.Point(85, 13)
         Me.txtCompra.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCompra.Name = "txtCompra"
         Me.txtCompra.ReadOnly = True
@@ -116,7 +116,7 @@ Partial Class Compra
         Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel2.Controls.Add(Me.txtTotal)
         Me.Panel2.Controls.Add(Me.Label10)
-        Me.Panel2.Location = New System.Drawing.Point(13, 353)
+        Me.Panel2.Location = New System.Drawing.Point(13, 354)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(176, 94)
@@ -165,7 +165,7 @@ Partial Class Compra
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.txtNombre)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Location = New System.Drawing.Point(13, 44)
+        Me.Panel1.Location = New System.Drawing.Point(13, 45)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(769, 110)
@@ -339,7 +339,7 @@ Partial Class Compra
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Clave, Me.Codigo, Me.Nombre, Me.Precio, Me.Cantidad, Me.Subtotal})
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 161)
+        Me.DataGridView1.Location = New System.Drawing.Point(13, 162)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -393,7 +393,7 @@ Partial Class Compra
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(269, 15)
+        Me.Label2.Location = New System.Drawing.Point(269, 16)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(51, 17)
