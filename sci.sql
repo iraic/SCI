@@ -11,38 +11,118 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 24/02/2018 14:04:54
+ Date: 26/02/2018 13:00:00
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
+-- Table structure for articulos
+-- ----------------------------
+DROP TABLE IF EXISTS `articulos`;
+CREATE TABLE `articulos`  (
+  `idArticulo` int(11) NOT NULL DEFAULT 0,
+  `Codigo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Nombre` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `idCategoria` int(11) NULL DEFAULT NULL,
+  `Descripcion` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Marca` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `idUnidad` int(11) NULL DEFAULT NULL,
+  `Cantidad` int(11) NULL DEFAULT NULL,
+  `PCompra` decimal(10, 2) NULL DEFAULT NULL,
+  `PVenta` decimal(10, 2) NULL DEFAULT NULL,
+  `Min` int(11) NULL DEFAULT NULL,
+  `Max` int(11) NULL DEFAULT NULL,
+  `Status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`idArticulo`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for categorias
+-- ----------------------------
+DROP TABLE IF EXISTS `categorias`;
+CREATE TABLE `categorias`  (
+  `idCategoria` int(11) NOT NULL DEFAULT 0,
+  `Nombre` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`idCategoria`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for clientes
+-- ----------------------------
+DROP TABLE IF EXISTS `clientes`;
+CREATE TABLE `clientes`  (
+  `idCliente` int(11) NOT NULL DEFAULT 0,
+  `Nombre` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Direccion` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Nacimiento` date NULL DEFAULT NULL,
+  `Peso` smallint(6) NULL DEFAULT NULL,
+  `Tel` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Emergencia` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `eMail` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Facebook` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Registro` datetime(0) NULL DEFAULT NULL,
+  `Obs` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`idCliente`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
 -- Table structure for compras
 -- ----------------------------
 DROP TABLE IF EXISTS `compras`;
 CREATE TABLE `compras`  (
-  `folio` int(11) NOT NULL,
-  `fecha` datetime(0) NULL DEFAULT NULL,
-  `proveedor` int(11) NULL DEFAULT NULL,
-  `observaciones` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `user` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `total` decimal(12, 2) NULL DEFAULT NULL,
-  PRIMARY KEY (`folio`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  `idCompra` int(11) NOT NULL DEFAULT 0,
+  `Fecha` datetime(0) NULL DEFAULT NULL,
+  `Total` decimal(10, 2) NULL DEFAULT NULL,
+  `User` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`idCompra`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for comprasdetalle
 -- ----------------------------
 DROP TABLE IF EXISTS `comprasdetalle`;
 CREATE TABLE `comprasdetalle`  (
-  `numero` int(11) NOT NULL AUTO_INCREMENT,
-  `compra` int(11) NULL DEFAULT NULL,
-  `producto` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `cantidad` decimal(12, 4) NULL DEFAULT NULL,
-  `precio` decimal(12, 2) NULL DEFAULT NULL,
-  PRIMARY KEY (`numero`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  `idDetalle` int(11) NOT NULL AUTO_INCREMENT,
+  `idCompra` int(11) NULL DEFAULT NULL,
+  `idArticulo` int(11) NULL DEFAULT NULL,
+  `Precio` decimal(10, 2) NULL DEFAULT NULL,
+  `Cantidad` int(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`idDetalle`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for empresa
+-- ----------------------------
+DROP TABLE IF EXISTS `empresa`;
+CREATE TABLE `empresa`  (
+  `Id` int(11) NOT NULL DEFAULT 0,
+  `Nombre` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Calle` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `No` varchar(6) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Colonia` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Telefono` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Ciudad` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Horario` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `RFC` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for formaspago
+-- ----------------------------
+DROP TABLE IF EXISTS `formaspago`;
+CREATE TABLE `formaspago`  (
+  `idFormaPago` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `Nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Credito` tinyint(4) NULL DEFAULT NULL,
+  `Status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`idFormaPago`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for inventario
@@ -62,37 +142,54 @@ CREATE TABLE `inventario`  (
 ) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of inventario
+-- Table structure for notas
 -- ----------------------------
-INSERT INTO `inventario` VALUES ('1', '1', 'algo', 'pz', 1.00, 10.00, 5.0000, 1.0000, 10.0000);
+DROP TABLE IF EXISTS `notas`;
+CREATE TABLE `notas`  (
+  `idNota` int(11) NOT NULL DEFAULT 0,
+  `Fecha` datetime(0) NULL DEFAULT NULL,
+  `Total` decimal(10, 2) NULL DEFAULT NULL,
+  `Paga` decimal(10, 2) NULL DEFAULT NULL,
+  `idFormaPago` int(11) NULL DEFAULT NULL,
+  `User` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`idNota`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for remision
+-- Table structure for notasdetalle
 -- ----------------------------
-DROP TABLE IF EXISTS `remision`;
-CREATE TABLE `remision`  (
-  `folio` int(11) NOT NULL,
-  `fecha` datetime(0) NULL DEFAULT NULL,
-  `cliente` int(11) NULL DEFAULT NULL,
-  `observaciones` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `user` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `total` decimal(12, 2) NULL DEFAULT NULL,
-  PRIMARY KEY (`folio`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+DROP TABLE IF EXISTS `notasdetalle`;
+CREATE TABLE `notasdetalle`  (
+  `idDetalle` int(11) NOT NULL AUTO_INCREMENT,
+  `idNota` int(11) NULL DEFAULT NULL,
+  `idArticulo` int(11) NULL DEFAULT NULL,
+  `Precio` decimal(10, 2) NULL DEFAULT NULL,
+  `Cantidad` int(11) NULL DEFAULT NULL,
+  `Descuento` decimal(10, 2) NULL DEFAULT NULL,
+  PRIMARY KEY (`idDetalle`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3439 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for remisiondetalle
+-- Table structure for permisos
 -- ----------------------------
-DROP TABLE IF EXISTS `remisiondetalle`;
-CREATE TABLE `remisiondetalle`  (
-  `numero` int(11) NOT NULL AUTO_INCREMENT,
-  `remision` int(11) NULL DEFAULT NULL,
-  `producto` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `cantidad` decimal(12, 4) NULL DEFAULT NULL,
-  `precio` decimal(12, 2) NULL DEFAULT NULL,
-  `descuento` decimal(4, 2) NULL DEFAULT NULL,
-  PRIMARY KEY (`numero`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+DROP TABLE IF EXISTS `permisos`;
+CREATE TABLE `permisos`  (
+  `idPermiso` char(4) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0',
+  `Nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`idPermiso`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for roles
+-- ----------------------------
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE `roles`  (
+  `idRol` smallint(6) NOT NULL DEFAULT 0,
+  `Nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Permisos` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`idRol`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for sequence
@@ -109,25 +206,36 @@ CREATE TABLE `sequence`  (
 ) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of sequence
+-- Table structure for unidades
 -- ----------------------------
-INSERT INTO `sequence` VALUES ('compra', 1, 1, 9223372036854775807, 3, 0);
-INSERT INTO `sequence` VALUES ('remision', 1, 1, 9223372036854775807, 1, 0);
+DROP TABLE IF EXISTS `unidades`;
+CREATE TABLE `unidades`  (
+  `idUnidad` int(11) NOT NULL DEFAULT 0,
+  `Nombre` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Valor` smallint(6) NULL DEFAULT NULL,
+  `Status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`idUnidad`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for usuarios
 -- ----------------------------
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios`  (
-  `user` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `pass` varchar(8) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`user`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of usuarios
--- ----------------------------
-INSERT INTO `usuarios` VALUES ('admin', '1234');
+  `User` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `Pass` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `idRol` smallint(6) NULL DEFAULT NULL,
+  `Nombre` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Dir` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Tel` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Mail` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Facebook` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Status` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Registro` datetime(0) NULL DEFAULT NULL,
+  `Obs` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `sesion` tinyint(4) NULL DEFAULT NULL,
+  PRIMARY KEY (`User`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Function structure for curval

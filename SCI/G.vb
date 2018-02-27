@@ -1,12 +1,22 @@
-﻿Imports MySql.Data
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
+Imports System.Data
+Imports System.IO
 Module G
+    Public servidor As String = "Server=localhost;Database=sci;Uid=root;Password="
+    Public hCache As Integer
 
-    Public servidor As String = "DATABASE=sci;DATASOURCE=localhost;USERID=root;PWD="
     Public user As String
     Public rol As String
     Public permisos As String
     Public separador As String = "-"
+    Public caja As Integer
+
+    Public empresa As String
+    Public direccion As String
+    'Public lectorH As New zkemkeeper.CZKEM
+    'Public estadoL As Integer = 0
+    'Public estadoL2 As Integer = 0
+
 
     Public Function leerPermisos()
         Dim con As New MySqlConnection(G.servidor)
@@ -193,6 +203,84 @@ Module G
         Return cad
     End Function
 
+    Public Function guardaImagen(tabla As String, campoKey As String, valorKey As String, campoBlob As String, valorBlob As Image) As Boolean
+        Dim con As New MySqlConnection(G.servidor)
+        Dim com As New MySqlCommand
+        Dim dr As MySqlDataReader
+        Dim sql As String
+        guardaImagen = False
+        Try
+
+            Dim Imag As Byte()
+            Imag = Imagen_Bytes(valorBlob)
+
+            con.Open()
+            com.Connection = con
+
+            com.CommandText = "SELECT " & campoKey & " FROM " & tabla & " WHERE " & campoKey & "=" & valorKey
+            dr = com.ExecuteReader
+            If dr.Read Then
+                sql = "UPDATE " & tabla & " SET " & campoBlob & "=?" & campoBlob & " WHERE " & campoKey & "=" & valorKey
+            Else
+                sql = "INSERT INTO " & tabla & "(" & campoKey & "," & campoBlob & ") VALUES(" & valorKey & ",?" & campoBlob & ")"
+            End If
+            dr.Close()
+            com.CommandText = sql
+            com.Parameters.AddWithValue("?" & campoBlob, Imag)
+            com.ExecuteNonQuery()
+            con.Close()
+            guardaImagen = True
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Function
+
+    Public Function leerImagen(tabla As String, campoBlob As String, condicion As String) As Image
+        Dim con As New MySqlConnection(G.servidor)
+        Dim com As New MySqlCommand
+        Dim dr As MySqlDataReader
+        leerImagen = Nothing
+        con.Open()
+        com.Connection = con
+        Try
+            Dim Imag As Byte()
+            com.CommandText = "SELECT " & campoBlob & " FROM " & tabla & " WHERE " & condicion
+            dr = com.ExecuteReader
+            If dr.Read() Then
+                Imag = dr(campoBlob)
+                leerImagen = Bytes_Imagen(Imag)
+            End If
+            dr.Close()
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Function
+
+    Private Function Bytes_Imagen(ByVal Imagen As Byte()) As Image
+        Try
+            If Not Imagen Is Nothing Then
+                Dim Bin As New MemoryStream(Imagen)
+                Dim Resultado As Image = Image.FromStream(Bin)
+                Return Resultado
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Private Function Imagen_Bytes(ByVal Imagen As Image) As Byte()
+        If Not Imagen Is Nothing Then
+            Dim Bin As New MemoryStream
+            Imagen.Save(Bin, Imaging.ImageFormat.Jpeg)
+            Return Bin.GetBuffer
+        Else
+            Return Nothing
+        End If
+    End Function
+
     Public Function transaccion(operaciones() As String) As Boolean
         Dim con As New MySqlConnection(G.servidor)
         Dim com As New MySqlCommand
@@ -223,239 +311,5 @@ Module G
         End Try
     End Function
 
-    Public Function Letras(numero As Double) As String
-        Dim cantidad As String = Format(numero, "0.00")
-        Return Letras(cantidad)
-    End Function
-
-    Public Function Letras(ByVal numero As String) As String
-        '********Declara variables de tipo cadena************
-        Dim palabras, entero, dec, flag As String
-        entero = ""
-        dec = ""
-        palabras = ""
-        '********Declara variables de tipo entero***********
-        Dim num, x, y As Integer
-
-        flag = "N"
-
-        '**********Número Negativo***********
-        If Mid(numero, 1, 1) = "-" Then
-            numero = Mid(numero, 2, numero.ToString.Length - 1).ToString
-            palabras = "menos "
-        End If
-
-        '**********Si tiene ceros a la izquierda*************
-        For x = 1 To numero.ToString.Length
-            If Mid(numero, 1, 1) = "0" Then
-                numero = Trim(Mid(numero, 2, numero.ToString.Length).ToString)
-                If Trim(numero.ToString.Length) = 0 Then palabras = ""
-            Else
-                Exit For
-            End If
-        Next
-
-        '*********Dividir parte entera y decimal************
-        For y = 1 To Len(numero)
-            If Mid(numero, y, 1) = "." Then
-                flag = "S"
-            Else
-                If flag = "N" Then
-                    entero = entero + Mid(numero, y, 1)
-                Else
-                    dec = dec + Mid(numero, y, 1)
-                End If
-            End If
-        Next y
-
-        If Len(dec) = 1 Then dec = dec & "0"
-
-        '**********proceso de conversión***********
-        flag = "N"
-
-        If Val(numero) <= 999999999 Then
-            For y = Len(entero) To 1 Step -1
-                num = Len(entero) - (y - 1)
-                Select Case y
-                    Case 3, 6, 9
-                        '**********Asigna las palabras para las centenas***********
-                        Select Case Mid(entero, num, 1)
-                            Case "1"
-                                If Mid(entero, num + 1, 1) = "0" And Mid(entero, num + 2, 1) = "0" Then
-                                    palabras = palabras & "cien "
-                                Else
-                                    palabras = palabras & "ciento "
-                                End If
-                            Case "2"
-                                palabras = palabras & "doscientos "
-                            Case "3"
-                                palabras = palabras & "trescientos "
-                            Case "4"
-                                palabras = palabras & "cuatrocientos "
-                            Case "5"
-                                palabras = palabras & "quinientos "
-                            Case "6"
-                                palabras = palabras & "seiscientos "
-                            Case "7"
-                                palabras = palabras & "setecientos "
-                            Case "8"
-                                palabras = palabras & "ochocientos "
-                            Case "9"
-                                palabras = palabras & "novecientos "
-                        End Select
-                    Case 2, 5, 8
-                        '*********Asigna las palabras para las decenas************
-                        Select Case Mid(entero, num, 1)
-                            Case "1"
-                                If Mid(entero, num + 1, 1) = "0" Then
-                                    flag = "S"
-                                    palabras = palabras & "diez "
-                                End If
-                                If Mid(entero, num + 1, 1) = "1" Then
-                                    flag = "S"
-                                    palabras = palabras & "once "
-                                End If
-                                If Mid(entero, num + 1, 1) = "2" Then
-                                    flag = "S"
-                                    palabras = palabras & "doce "
-                                End If
-                                If Mid(entero, num + 1, 1) = "3" Then
-                                    flag = "S"
-                                    palabras = palabras & "trece "
-                                End If
-                                If Mid(entero, num + 1, 1) = "4" Then
-                                    flag = "S"
-                                    palabras = palabras & "catorce "
-                                End If
-                                If Mid(entero, num + 1, 1) = "5" Then
-                                    flag = "S"
-                                    palabras = palabras & "quince "
-                                End If
-                                If Mid(entero, num + 1, 1) > "5" Then
-                                    flag = "N"
-                                    palabras = palabras & "dieci"
-                                End If
-                            Case "2"
-                                If Mid(entero, num + 1, 1) = "0" Then
-                                    palabras = palabras & "veinte "
-                                    flag = "S"
-                                Else
-                                    palabras = palabras & "veinti"
-                                    flag = "N"
-                                End If
-                            Case "3"
-                                If Mid(entero, num + 1, 1) = "0" Then
-                                    palabras = palabras & "treinta "
-                                    flag = "S"
-                                Else
-                                    palabras = palabras & "treinta y "
-                                    flag = "N"
-                                End If
-                            Case "4"
-                                If Mid(entero, num + 1, 1) = "0" Then
-                                    palabras = palabras & "cuarenta "
-                                    flag = "S"
-                                Else
-                                    palabras = palabras & "cuarenta y "
-                                    flag = "N"
-                                End If
-                            Case "5"
-                                If Mid(entero, num + 1, 1) = "0" Then
-                                    palabras = palabras & "cincuenta "
-                                    flag = "S"
-                                Else
-                                    palabras = palabras & "cincuenta y "
-                                    flag = "N"
-                                End If
-                            Case "6"
-                                If Mid(entero, num + 1, 1) = "0" Then
-                                    palabras = palabras & "sesenta "
-                                    flag = "S"
-                                Else
-                                    palabras = palabras & "sesenta y "
-                                    flag = "N"
-                                End If
-                            Case "7"
-                                If Mid(entero, num + 1, 1) = "0" Then
-                                    palabras = palabras & "setenta "
-                                    flag = "S"
-                                Else
-                                    palabras = palabras & "setenta y "
-                                    flag = "N"
-                                End If
-                            Case "8"
-                                If Mid(entero, num + 1, 1) = "0" Then
-                                    palabras = palabras & "ochenta "
-                                    flag = "S"
-                                Else
-                                    palabras = palabras & "ochenta y "
-                                    flag = "N"
-                                End If
-                            Case "9"
-                                If Mid(entero, num + 1, 1) = "0" Then
-                                    palabras = palabras & "noventa "
-                                    flag = "S"
-                                Else
-                                    palabras = palabras & "noventa y "
-                                    flag = "N"
-                                End If
-                        End Select
-                    Case 1, 4, 7
-                        '*********Asigna las palabras para las unidades*********
-                        Select Case Mid(entero, num, 1)
-                            Case "1"
-                                If flag = "N" Then
-                                    If y = 1 Then
-                                        palabras = palabras & "uno "
-                                    Else
-                                        palabras = palabras & "un "
-                                    End If
-                                End If
-                            Case "2"
-                                If flag = "N" Then palabras = palabras & "dos "
-                            Case "3"
-                                If flag = "N" Then palabras = palabras & "tres "
-                            Case "4"
-                                If flag = "N" Then palabras = palabras & "cuatro "
-                            Case "5"
-                                If flag = "N" Then palabras = palabras & "cinco "
-                            Case "6"
-                                If flag = "N" Then palabras = palabras & "seis "
-                            Case "7"
-                                If flag = "N" Then palabras = palabras & "siete "
-                            Case "8"
-                                If flag = "N" Then palabras = palabras & "ocho "
-                            Case "9"
-                                If flag = "N" Then palabras = palabras & "nueve "
-                        End Select
-                End Select
-
-                '***********Asigna la palabra mil***************
-                If y = 4 Then
-                    If Mid(entero, 6, 1) <> "0" Or Mid(entero, 5, 1) <> "0" Or Mid(entero, 4, 1) <> "0" Or _
-                    (Mid(entero, 6, 1) = "0" And Mid(entero, 5, 1) = "0" And Mid(entero, 4, 1) = "0" And _
-                    Len(entero) <= 6) Then palabras = palabras & "mil "
-                End If
-
-                '**********Asigna la palabra millón*************
-                If y = 7 Then
-                    If Len(entero) = 7 And Mid(entero, 1, 1) = "1" Then
-                        palabras = palabras & "millón "
-                    Else
-                        palabras = palabras & "millones "
-                    End If
-                End If
-            Next y
-
-            '**********Une la parte entera y la parte decimal*************
-            If dec <> "" Then
-                Letras = palabras & " pesos " & dec & "/100 M.N."
-            Else
-                Letras = palabras
-            End If
-        Else
-            Letras = ""
-        End If
-    End Function
 
 End Module

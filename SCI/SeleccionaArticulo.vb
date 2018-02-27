@@ -34,4 +34,5 @@
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         G.llenarGrid("SELECT idArticulo, Nombre FROM clientes WHERE status='A' and Nombre LIKE '%" & TextBox1.Text & "%'", DataGridView1)
     End Sub
+
 End Class

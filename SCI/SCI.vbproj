@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -71,16 +86,58 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compra.Designer.vb">
-      <DependentUpon>Compra.vb</DependentUpon>
+    <Compile Include="ACategorias.Designer.vb">
+      <DependentUpon>ACategorias.vb</DependentUpon>
     </Compile>
-    <Compile Include="Compra.vb">
+    <Compile Include="ACategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Articulos.designer.vb">
+      <DependentUpon>Articulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Articulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AUnidades.designer.vb">
+      <DependentUpon>AUnidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AUnidades.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Compras.Designer.vb">
       <DependentUpon>Compras.vb</DependentUpon>
     </Compile>
     <Compile Include="Compras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaCompras.Designer.vb">
+      <DependentUpon>ConsultaCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaVentas.Designer.vb">
+      <DependentUpon>ConsultaVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosEmpresa.Designer.vb">
+      <DependentUpon>DatosEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados.Designer.vb">
+      <DependentUpon>Listados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PermisoEspecial.Designer.vb">
+      <DependentUpon>PermisoEspecial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PermisoEspecial.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Producto.Designer.vb">
@@ -124,19 +181,58 @@
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Roles.Designer.vb">
+      <DependentUpon>Roles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SeleccionaArticulo.Designer.vb">
       <DependentUpon>SeleccionaArticulo.vb</DependentUpon>
     </Compile>
     <Compile Include="SeleccionaArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Usuarios.Designer.vb">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas.Designer.vb">
+      <DependentUpon>Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Compra.resx">
-      <DependentUpon>Compra.vb</DependentUpon>
+    <EmbeddedResource Include="ACategorias.resx">
+      <DependentUpon>ACategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Articulos.resx">
+      <DependentUpon>Articulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AUnidades.resx">
+      <DependentUpon>AUnidades.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras.resx">
       <DependentUpon>Compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaCompras.resx">
+      <DependentUpon>ConsultaCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaVentas.resx">
+      <DependentUpon>ConsultaVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosEmpresa.resx">
+      <DependentUpon>DatosEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados.resx">
+      <DependentUpon>Listados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PermisoEspecial.resx">
+      <DependentUpon>PermisoEspecial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto.resx">
       <DependentUpon>Producto.vb</DependentUpon>
@@ -156,8 +252,17 @@
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Roles.resx">
+      <DependentUpon>Roles.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SeleccionaArticulo.resx">
       <DependentUpon>SeleccionaArticulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas.resx">
+      <DependentUpon>Ventas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +276,23 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

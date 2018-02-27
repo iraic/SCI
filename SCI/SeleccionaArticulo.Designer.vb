@@ -22,6 +22,7 @@ Partial Class SeleccionaArticulo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SeleccionaArticulo))
         Me.Button5 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -38,29 +39,27 @@ Partial Class SeleccionaArticulo
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(334, 373)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button5.Image = Global.SCI.My.Resources.Resources.Search
+        Me.Button5.Location = New System.Drawing.Point(253, 305)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(31, 28)
-        Me.Button5.TabIndex = 123
+        Me.Button5.Size = New System.Drawing.Size(23, 23)
+        Me.Button5.TabIndex = 114
         Me.Button5.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(86, 376)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox2.Location = New System.Drawing.Point(67, 307)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(239, 22)
-        Me.TextBox2.TabIndex = 121
+        Me.TextBox2.Size = New System.Drawing.Size(180, 20)
+        Me.TextBox2.TabIndex = 112
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 380)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(14, 310)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 17)
-        Me.Label2.TabIndex = 122
+        Me.Label2.Size = New System.Drawing.Size(47, 13)
+        Me.Label2.TabIndex = 113
         Me.Label2.Text = "Nombre:"
         '
         'DataGridView1
@@ -69,13 +68,12 @@ Partial Class SeleccionaArticulo
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idArticulo1, Me.Nombre1})
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 13)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(581, 324)
-        Me.DataGridView1.TabIndex = 118
+        Me.DataGridView1.Size = New System.Drawing.Size(436, 263)
+        Me.DataGridView1.TabIndex = 108
         '
         'idArticulo1
         '
@@ -95,54 +93,52 @@ Partial Class SeleccionaArticulo
         'Button2
         '
         Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button2.Location = New System.Drawing.Point(488, 348)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Image = Global.SCI.My.Resources.Resources.Cancel
+        Me.Button2.Location = New System.Drawing.Point(368, 284)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(107, 54)
-        Me.Button2.TabIndex = 117
+        Me.Button2.Size = New System.Drawing.Size(80, 44)
+        Me.Button2.TabIndex = 107
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(373, 348)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Image = Global.SCI.My.Resources.Resources.Ok
+        Me.Button1.Location = New System.Drawing.Point(282, 284)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(107, 54)
-        Me.Button1.TabIndex = 115
+        Me.Button1.Size = New System.Drawing.Size(80, 44)
+        Me.Button1.TabIndex = 105
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(86, 344)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Location = New System.Drawing.Point(67, 281)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(61, 22)
-        Me.TextBox1.TabIndex = 116
+        Me.TextBox1.Size = New System.Drawing.Size(47, 20)
+        Me.TextBox1.TabIndex = 106
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(157, 344)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button3.Image = Global.SCI.My.Resources.Resources.Search
+        Me.Button3.Location = New System.Drawing.Point(120, 281)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(31, 28)
-        Me.Button3.TabIndex = 119
+        Me.Button3.Size = New System.Drawing.Size(23, 23)
+        Me.Button3.TabIndex = 109
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 348)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(14, 284)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 17)
-        Me.Label1.TabIndex = 120
+        Me.Label1.Size = New System.Drawing.Size(37, 13)
+        Me.Label1.TabIndex = 110
         Me.Label1.Text = "Clave:"
         '
         'SeleccionaArticulo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(610, 419)
+        Me.ClientSize = New System.Drawing.Size(464, 343)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label2)
@@ -152,8 +148,12 @@ Partial Class SeleccionaArticulo
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "SeleccionaArticulo"
-        Me.Text = "SeleccionarArticulo"
+        Me.Text = "Selecciona Artículo"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -163,11 +163,11 @@ Partial Class SeleccionaArticulo
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents idArticulo1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Nombre1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents idArticulo1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Nombre1 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
